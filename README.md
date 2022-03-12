@@ -3,7 +3,7 @@
 - Ter menu;
 - Ter um título;
 - Ter ao menos um banner;
-- Criar logo da empresa com SVG ou Canvas (https://www.w3schools.com/graphics/ (Links para um site ex- terno.));
+- Criar logo da empresa com SVG ou Canvas (https://www.w3schools.com/graphics/);
 - Ter um formulário de cadastro (Nome Completo, Data de Nascimento, Sexo, CPF, Logradouro, Número do Logradouro, CEP, Cidade e UF);
 - Validar se CPF inserido é válido, caso não seja, cursor deve ficar no input onde tem a informação inválida, borda do input deve ser vermelha e um alerta deve ser lançado para informa o usuário da necessidade de ajuste;
 - Ter uma tabela de IMC (A tabela deve ser zebrada e com borda de linha única);
