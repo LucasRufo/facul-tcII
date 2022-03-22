@@ -10,73 +10,270 @@
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <title>E-Saúde - Início</title>
 </head>
 
 <body>
-  <form id="formCadastro" action="">
-    <div>
-      <label for="nome">Nome Completo: </label>
-      <input type="text" name="nome" id="nome">
-    </div>
+  <main>
 
-    <div>
-      <label for="dataNascimento">Data de Nascimento: </label>
-      <input type="text" name="dataNascimento" id="dataNascimento">
-    </div>
+    <!-- navbar -->
+    <header>
+      <nav class="nav-box container">
+        <a href="#" class="logo">E-Saúde</a>
+        <ul class="menu">
+          <li class="menu-item"><a class="menu-link" href="">Início</a></li>
+          <li class="menu-item"><a class="menu-link" href="">Missão</a></li>
+          <li class="menu-item"><a class="menu-link" href="">Cadastro</a></li>
+          <li class="menu-item"><a class="menu-link" href="">IMC</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div>
-      <label for="sexo">Sexo: </label>
+    <!-- banner -->
+    <section class="banner" style="background-size: cover;">
+      <div class="container banner-box">
+        <div class="banner-title">Sua sáude é extremamente importante.</div>
+        <div class="banner-text">
+          Por isso aqui na E-Saúde te ajudamos a entender melhor práticas e hábitos que te
+          ajudarão na caminhada para uma vida saudável.
+        </div>
+      </div>
+    </section>
 
-      <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
-      <label for="radioMasculino">Masculino</label>
+    <!-- visão -->
+    <section class="visao">
+      <div class="container">
+        <div class="visao-title">Visão</div>
+        <div class="visao-text">
+          Nossa visão se baseia em três pilares.
+        </div>
 
-      <input type="radio" name="sexo" id="radioFeminino" value="Feminino">
-      <label for="radioFeminino">Feminino</label>
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">
+              <img class="card-image" src="./assets/images/salad.png" alt="Salada">
+              <span class="card-name">Alimentação</span>
+            </div>
+            <div class="card-text">Uma grande parte do nosso dia se baseia na alimentação correta, sempre com frutas e
+              verduras presentes</div>
+          </div>
 
-      <input type="radio" name="sexo" id="radioOutro" value="Outro">
-      <label for="radioOutro">Outro</label>
-    </div>
+          <div class="card">
+            <div class="card-title">
+              <img class="card-image" src="./assets/images/exercise.png" alt="Exercícios">
+              <span class="card-name">Exercícios</span>
+            </div>
+            <div class="card-text">Exercícios diários são extremamente importantes para nossa saúde e para o nosso
+              corpo, então também colocamos como prioridade.</div>
+          </div>
 
-    <div>
-      <label for="cpf">CPF: </label>
-      <input type="text" name="cpf" id="cpf">
-    </div>
+          <div class="card">
+            <div class="card-title">
+              <img class="card-image" src="./assets/images/rest.png" alt="Descanso">
+              <span class="card-name">Descanso</span>
+            </div>
+            <div class="card-text">Por último o descanso, que é importante para nosso corpo conseguir se recuperar
+              corretamente dos exercícios.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div>
-      <label for="logradouro">Logradouro: </label>
-      <input type="text" name="logradouro" id="logradouro">
-    </div>
+    <hr>
 
-    <div>
-      <label for="numero">Número: </label>
-      <input type="text" name="numero" id="numero">
-    </div>
+    <!-- missão -->
+    <section class="missao">
+      <div class="container">
+        <div class="missao-title">Missão</div>
+        <div class="missao-text">
+          A missão da nossa empresa é ajudar as pessoas através da informação, então agrupamos materiais, artigos, blogs
+          que oferecem contéudo sobre saúde. Também oferecemos nosso aplicativo que te permite ter um controle maior de
+          sua rotina de exercícios e alimentação.
+        </div>
+      </div>
+    </section>
 
-    <div>
-      <label for="cep">CEP: </label>
-      <input type="text" name="cep" id="cep">
-    </div>
+    <hr>
 
-    <div>
-      <label for="cidade">Cidade: </label>
-      <input type="text" name="cidade" id="cidade">
-    </div>
+    <!-- valores -->
+    <section class="valores">
+      <div class="container">
+        <div class="valores-title">Valores</div>
+        <div class="valores-text">
+          Nossos principais valores envolvem as características que mais damos atenção aqui dentro da E-Saúde.
+        </div>
+        <div class="valores-content">
+          <ul class="valores-list">
+            <li class="valores-item">Transparência</li>
+            <li class="valores-item">Ética</li>
+            <li class="valores-item">Equilíbrio</li>
+            <li class="valores-item">Sustentabilidade</li>
+          </ul>
+          <ul class="valores-list">
+            <li class="valores-item">Reponsabilidade</li>
+            <li class="valores-item">Simplicidade</li>
+            <li class="valores-item">Resultados</li>
+            <li class="valores-item">Criatividade</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div>
-      <label for="uf">UF: </label>
-      <input type="text" name="uf" id="uf">
-    </div>
+    <hr>
 
-    <button type="submit">Enviar</button>
-    <button type="reset">Limpar</button>
+    <!-- imc -->
+    <section class="imc">
+      <div class="container">
+        <div class="imc-title">O que é IMC?</div>
+        <div class="imc-text">
+          IMC é a classificação do índice de massa corporal, ele pode nos ajudar a identificar obesidade ou desnutrição
+          em crianças, adolescentes, adultos e idosos.
+          <br>
+          <br>
+          É importante sabermos nosso IMC para podermos ajustar nossa rotina de exercícios e alimentação e atingirmos um
+          peso saudável para nossa idade.
+          <br>
+          <br>
+          Por isso a E-Saúde oferece uma calculadora de IMC. Preencha o formulário abaixo e veja o seu.
+        </div>
 
-  </form>
+        <div class="imc-form">
+          <form id="formIMC">
+            <div class="imc-form-group">
+              <label for="peso" class="label">Peso <small>(ex: 80,5)</small></label>
+              <input type="text" name="peso" id="peso" class="input" placeholder="Peso">
+            </div>
+            <div class="imc-form-group">
+              <label for="altura" class="label">Altura <small>(ex: 1,80)</small></label>
+              <input type="text" name="altura" id="altura" class="input" placeholder="Altura">
+            </div>
+            <div>
+              <button type="submit" class="button">Calcular</button>
+              <button type="reset" class="button">Limpar</button>
+            </div>
 
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.2619628235984!2d-46.78319968449172!3d-23.666588071372907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53af46420527%3A0xeb99ed9009f47af6!2sUNASP%20SP!5e0!3m2!1spt-BR!2sbr!4v1647044305392!5m2!1spt-BR!2sbr"
-    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-  </iframe>
+            <div id="resultado" class="resultado d-none"></div>
+          </form>
+
+          <div class="imc-table-section">
+            <table class="imc-table">
+              <thead>
+                <tr>
+                  <th>Classificação</th>
+                  <th>IMC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="abaixoPeso">
+                  <td>Abaixo do peso</td>
+                  <td>Abaixo de 18,5</td>
+                </tr>
+                <tr id="pesoNormal">
+                  <td>Peso normal</td>
+                  <td>18,5 a 24,9</td>
+                </tr>
+                <tr id="sobrepeso">
+                  <td>Sobrepeso</td>
+                  <td>25 a 29,9</td>
+                </tr>
+                <tr id="obesidadeI">
+                  <td>Obesidade grau I</td>
+                  <td>30 a 34,9</td>
+                </tr>
+                <tr id="obesidadeII">
+                  <td>Obesidade grau II</td>
+                  <td>35 a 39,9</td>
+                </tr>
+                <tr id="obesidadeIII">
+                  <td>Obesidade grau III</td>
+                  <td>Maior ou igual 40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- formulario de cadastro -->
+    <section class="container">
+      <form id="formCadastro">
+        <div>
+          <label for="nome">Nome Completo: </label>
+          <input class="input" type="text" name="nome" id="nome">
+        </div>
+
+        <div>
+          <label for="dataNascimento">Data de Nascimento: </label>
+          <input class="input" type="text" name="dataNascimento" id="dataNascimento">
+        </div>
+
+        <div>
+          <label for="sexo">Sexo: </label>
+
+          <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
+          <label for="radioMasculino">Masculino</label>
+
+          <input type="radio" name="sexo" id="radioFeminino" value="Feminino">
+          <label for="radioFeminino">Feminino</label>
+
+          <input type="radio" name="sexo" id="radioOutro" value="Outro">
+          <label for="radioOutro">Outro</label>
+        </div>
+
+        <div>
+          <label for="cpf">CPF: </label>
+          <input class="input" type="text" name="cpf" id="cpf">
+        </div>
+
+        <div>
+          <label for="logradouro">Logradouro: </label>
+          <input class="input" type="text" name="logradouro" id="logradouro">
+        </div>
+
+        <div>
+          <label for="numero">Número: </label>
+          <input class="input" type="text" name="numero" id="numero">
+        </div>
+
+        <div>
+          <label for="cep">CEP: </label>
+          <input class="input" type="text" name="cep" id="cep">
+        </div>
+
+        <div>
+          <label for="cidade">Cidade: </label>
+          <input class="input" type="text" name="cidade" id="cidade">
+        </div>
+
+        <div>
+          <label class="label" for="uf">UF: </label>
+          <input class="input" type="text" name="uf" id="uf">
+        </div>
+
+        <div class="action-buttons">
+          <button class="button" type="submit">Enviar</button>
+          <button class="button" type="reset">Limpar</button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <!-- mapa do google -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.2619628235984!2d-46.78319968449172!3d-23.666588071372907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53af46420527%3A0xeb99ed9009f47af6!2sUNASP%20SP!5e0!3m2!1spt-BR!2sbr!4v1647044305392!5m2!1spt-BR!2sbr"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+
+  </main>
 
   <script defer src="./scripts/scripts.js"></script>
 </body>

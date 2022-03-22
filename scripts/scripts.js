@@ -1,6 +1,12 @@
 let formularioCadastro = document.getElementById('formCadastro')
+let formularioImc = document.getElementById('formIMC')
+
+const ACTIVE_CLASS = 'active-row'
+const DISPLAY_NONE = 'd-none'
 
 formularioCadastro.onsubmit = onFormCadastroSubmit
+formularioImc.onsubmit = onFormImcSubmit
+formularioImc.onreset = onFormImcReset
 
 function onFormCadastroSubmit(e) {
   e.preventDefault()
@@ -13,6 +19,64 @@ function onFormCadastroSubmit(e) {
     alert('Cadastro realizado com sucesso!')
     formularioCadastro.reset()
   }
+}
+
+function onFormImcSubmit(e) {
+  e.preventDefault()
+
+  let formValues = getFormImcValues()
+
+  let formIsValid = validateFormImc(formValues)
+
+  if (formIsValid) {
+    let imc = (formValues.peso / (formValues.altura * formValues.altura)).toFixed(2)
+
+    let resultado = document.getElementById('resultado')
+
+    onFormImcReset()
+
+    if (imc < 18.5) {
+      document.getElementById('abaixoPeso').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está abaixo do peso.`
+    }
+
+    if (imc >= 18.5 && imc <= 24.9) {
+      document.getElementById('pesoNormal').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está com o peso normal.`
+    }
+
+    if (imc >= 25 && imc <= 29.9) {
+      document.getElementById('sobrepeso').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está com sobrepeso.`
+    }
+
+    if (imc >= 30 && imc <= 34.9) {
+      document.getElementById('obesidadeI').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está com obesidade grau I.`
+    }
+
+    if (imc >= 35 && imc <= 39.9) {
+      document.getElementById('obesidadeII').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está com obesidade grau II.`
+    }
+
+    if (imc >= 40) {
+      document.getElementById('obesidadeIII').classList.add(ACTIVE_CLASS)
+      resultado.innerText = `Seu IMC é ${imc} e você está com obesidade grau III.`
+    }
+
+    resultado.classList.remove(DISPLAY_NONE)
+  }
+}
+
+function onFormImcReset() {
+  document.getElementById('resultado').classList.add(DISPLAY_NONE)
+  document.getElementById('abaixoPeso').classList.remove(ACTIVE_CLASS)
+  document.getElementById('pesoNormal').classList.remove(ACTIVE_CLASS)
+  document.getElementById('sobrepeso').classList.remove(ACTIVE_CLASS)
+  document.getElementById('obesidadeI').classList.remove(ACTIVE_CLASS)
+  document.getElementById('obesidadeII').classList.remove(ACTIVE_CLASS)
+  document.getElementById('obesidadeIII').classList.remove(ACTIVE_CLASS)
 }
 
 function validateFormCadastro(formValues) {
@@ -62,6 +126,25 @@ function validateFormCadastro(formValues) {
   return true
 }
 
+function validateFormImc(formValues) {
+  let errors = []
+
+  if (!formValues?.peso) {
+    errors.push('Peso inválido')
+  }
+
+  if (!formValues?.altura) {
+    errors.push('Altura inválida')
+  }
+
+  if (errors.length > 0) {
+    alert('Por favor corrija os erros no calculo de IMC: \n' + errors.join('\n'))
+    return false
+  }
+
+  return true
+}
+
 function getFormCadastroValues() {
   let nome = document.querySelector('#nome')?.value
   let dataNascimento = document.querySelector('#dataNascimento')?.value
@@ -83,6 +166,16 @@ function getFormCadastroValues() {
     cep,
     cidade,
     uf
+  }
+}
+
+function getFormImcValues() {
+  let peso = +document.querySelector('#peso')?.value.replace(',', '.')
+  let altura = +document.querySelector('#altura')?.value.replace(',', '.')
+
+  return {
+    peso,
+    altura,
   }
 }
 
