@@ -3,8 +3,10 @@ let formularioImc = document.getElementById('formIMC')
 
 const ACTIVE_CLASS = 'active-row'
 const DISPLAY_NONE = 'd-none'
+const INPUT_ERROR = 'error'
 
 formularioCadastro.onsubmit = onFormCadastroSubmit
+formularioCadastro.onreset = onFormCadastroReset
 formularioImc.onsubmit = onFormImcSubmit
 formularioImc.onreset = onFormImcReset
 
@@ -79,19 +81,36 @@ function onFormImcReset() {
   document.getElementById('obesidadeIII').classList.remove(ACTIVE_CLASS)
 }
 
+function onFormCadastroReset() {
+  let inputs = document.querySelectorAll('input')
+
+  inputs.forEach(input => {
+    input.classList.remove(INPUT_ERROR)
+  })
+}
+
 function validateFormCadastro(formValues) {
   let errors = []
+  let elements = []
+
+  onFormCadastroReset()
 
   if (!validarCPF(formValues?.cpf)) {
     errors.push('CPF inválido')
+    elements.push(formValues.referencias.cpf)
+    formValues.referencias.cpf.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.nome) {
     errors.push('Nome inválido')
+    elements.push(formValues.referencias.nome)
+    formValues.referencias.nome.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.dataNascimento) {
     errors.push('Data de nascimento inválida')
+    elements.push(formValues.referencias.dataNascimento)
+    formValues.referencias.dataNascimento.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.sexo) {
@@ -100,25 +119,35 @@ function validateFormCadastro(formValues) {
 
   if (!formValues?.logradouro) {
     errors.push('Logradouro inválido')
+    elements.push(formValues.referencias.logradouro)
+    formValues.referencias.logradouro.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.numero) {
     errors.push('Número inválido')
+    elements.push(formValues.referencias.numero)
+    formValues.referencias.numero.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.cep) {
     errors.push('CEP inválido')
+    formValues.referencias.cep.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.cidade) {
     errors.push('Cidade inválida')
+    elements.push(formValues.referencias.cidade)
+    formValues.referencias.cidade.classList.add(INPUT_ERROR)
   }
 
   if (!formValues?.uf) {
     errors.push('UF inválido')
+    elements.push(formValues.referencias.uf)
+    formValues.referencias.uf.classList.add(INPUT_ERROR)
   }
 
   if (errors.length > 0) {
+    elements[0].focus()
     alert('Por favor corrija os erros no cadastro: \n' + errors.join('\n'))
     return false
   }
@@ -146,17 +175,18 @@ function validateFormImc(formValues) {
 }
 
 function getFormCadastroValues() {
-  let nome = document.querySelector('#nome')?.value
-  let dataNascimento = document.querySelector('#dataNascimento')?.value
-  let sexo = document.querySelector('input[name="sexo"]:checked')?.value;
-  let cpf = document.querySelector('#cpf')?.value
-  let logradouro = document.querySelector('#logradouro')?.value
-  let numero = document.querySelector('#numero')?.value
-  let cep = document.querySelector('#cep')?.value
-  let cidade = document.querySelector('#cidade')?.value
-  let uf = document.querySelector('#uf')?.value
+  let nome = document.querySelector('#nome')
+  let dataNascimento = document.querySelector('#dataNascimento')
+  let sexo = document.querySelector('input[name="sexo"]:checked');
+  let cpf = document.querySelector('#cpf')
+  let logradouro = document.querySelector('#logradouro')
+  let numero = document.querySelector('#numero')
+  let cep = document.querySelector('#cep')
+  let cidade = document.querySelector('#cidade')
+  let uf = document.querySelector('#uf')
 
-  return {
+  //referencias para o html, para poder colocar classes nos inputs depois
+  let referencias = {
     nome,
     dataNascimento,
     sexo,
@@ -166,6 +196,19 @@ function getFormCadastroValues() {
     cep,
     cidade,
     uf
+  }
+
+  return {
+    nome: nome?.value,
+    dataNascimento: dataNascimento?.value,
+    sexo: sexo?.value,
+    cpf: cpf?.value,
+    logradouro: logradouro?.value,
+    numero: numero?.value,
+    cep: cep?.value,
+    cidade: cidade?.value,
+    uf: uf?.value,
+    referencias
   }
 }
 

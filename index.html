@@ -20,14 +20,16 @@
   <main>
 
     <!-- navbar -->
-    <header>
+    <header id="inicio">
       <nav class="nav-box container">
-        <a href="#" class="logo">E-Saúde</a>
+        <a href="#" class="logo"><img src="./assets/images/logo.svg" alt="logo"></a>
         <ul class="menu">
-          <li class="menu-item"><a class="menu-link" href="">Início</a></li>
-          <li class="menu-item"><a class="menu-link" href="">Missão</a></li>
-          <li class="menu-item"><a class="menu-link" href="">Cadastro</a></li>
-          <li class="menu-item"><a class="menu-link" href="">IMC</a></li>
+          <li class="menu-item"><a class="menu-link" href="#inicio">Início</a></li>
+          <li class="menu-item"><a class="menu-link" href="#visao">Visão</a></li>
+          <li class="menu-item"><a class="menu-link" href="#missao">Missão</a></li>
+          <li class="menu-item"><a class="menu-link" href="#valores">Valores</a></li>
+          <li class="menu-item"><a class="menu-link" href="#imc">IMC</a></li>
+          <li class="menu-item"><a class="menu-link" href="#cadastro">Cadastro</a></li>
         </ul>
       </nav>
     </header>
@@ -44,7 +46,7 @@
     </section>
 
     <!-- visão -->
-    <section class="visao">
+    <section id="visao" class="visao">
       <div class="container">
         <div class="visao-title">Visão</div>
         <div class="visao-text">
@@ -58,7 +60,7 @@
               <span class="card-name">Alimentação</span>
             </div>
             <div class="card-text">Uma grande parte do nosso dia se baseia na alimentação correta, sempre com frutas e
-              verduras presentes</div>
+              verduras presentes.</div>
           </div>
 
           <div class="card">
@@ -85,7 +87,7 @@
     <hr>
 
     <!-- missão -->
-    <section class="missao">
+    <section id="missao" class="missao">
       <div class="container">
         <div class="missao-title">Missão</div>
         <div class="missao-text">
@@ -99,7 +101,7 @@
     <hr>
 
     <!-- valores -->
-    <section class="valores">
+    <section id="valores" class="valores">
       <div class="container">
         <div class="valores-title">Valores</div>
         <div class="valores-text">
@@ -125,7 +127,7 @@
     <hr>
 
     <!-- imc -->
-    <section class="imc">
+    <section id="imc" class="imc">
       <div class="container">
         <div class="imc-title">O que é IMC?</div>
         <div class="imc-text">
@@ -203,75 +205,99 @@
     <hr>
 
     <!-- formulario de cadastro -->
-    <section class="container">
-      <form id="formCadastro">
-        <div>
-          <label for="nome">Nome Completo: </label>
-          <input class="input" type="text" name="nome" id="nome">
+    <section id="cadastro" class="cadastro">
+      <div class="container">
+        <div class="cadastro-title">Cadastro</div>
+        <div class="cadastro-text">
+          Realize aqui seu cadastro no site.
         </div>
 
-        <div>
-          <label for="dataNascimento">Data de Nascimento: </label>
-          <input class="input" type="text" name="dataNascimento" id="dataNascimento">
-        </div>
+        <form class="form-cadastro" id="formCadastro">
 
-        <div>
-          <label for="sexo">Sexo: </label>
+          <div class="form-group">
+            <div class="w-100">
+              <label for="nome">Nome Completo: </label>
+              <input class="input" type="text" name="nome" id="nome">
+            </div>
 
-          <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
-          <label for="radioMasculino">Masculino</label>
+            <div class="w-50">
+              <label for="dataNascimento">Data de Nascimento: </label>
+              <input class="input" type="text" name="dataNascimento" id="dataNascimento">
+            </div>
+          </div>
 
-          <input type="radio" name="sexo" id="radioFeminino" value="Feminino">
-          <label for="radioFeminino">Feminino</label>
+          <div class="form-group">
+            <div class="w-100">
+              <label for="cpf">CPF: </label>
+              <input class="input" type="text" name="cpf" id="cpf">
+            </div>
+            <div class="w-50">
+              <label for="sexo">Sexo: </label>
 
-          <input type="radio" name="sexo" id="radioOutro" value="Outro">
-          <label for="radioOutro">Outro</label>
-        </div>
+              <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
+              <label for="radioMasculino">Masculino</label>
 
-        <div>
-          <label for="cpf">CPF: </label>
-          <input class="input" type="text" name="cpf" id="cpf">
-        </div>
+              <input type="radio" name="sexo" id="radioFeminino" value="Feminino">
+              <label for="radioFeminino">Feminino</label>
 
-        <div>
-          <label for="logradouro">Logradouro: </label>
-          <input class="input" type="text" name="logradouro" id="logradouro">
-        </div>
+              <input type="radio" name="sexo" id="radioOutro" value="Outro">
+              <label for="radioOutro">Outro</label>
+            </div>
+          </div>
 
-        <div>
-          <label for="numero">Número: </label>
-          <input class="input" type="text" name="numero" id="numero">
-        </div>
+          <div class="form-group">
+            <div class="w-100">
+              <label for="logradouro">Logradouro: </label>
+              <input class="input" type="text" name="logradouro" id="logradouro">
+            </div>
 
-        <div>
-          <label for="cep">CEP: </label>
-          <input class="input" type="text" name="cep" id="cep">
-        </div>
+            <div class="w-100">
+              <label for="numero">Número: </label>
+              <input class="input" type="text" name="numero" id="numero">
+            </div>
 
-        <div>
-          <label for="cidade">Cidade: </label>
-          <input class="input" type="text" name="cidade" id="cidade">
-        </div>
+            <div class="w-100">
+              <label for="cep">CEP: </label>
+              <input class="input" type="text" name="cep" id="cep">
+            </div>
+          </div>
 
-        <div>
-          <label class="label" for="uf">UF: </label>
-          <input class="input" type="text" name="uf" id="uf">
-        </div>
+          <div class="form-group">
+            <div class="w-100">
+              <label for="cidade">Cidade: </label>
+              <input class="input" type="text" name="cidade" id="cidade">
+            </div>
 
-        <div class="action-buttons">
-          <button class="button" type="submit">Enviar</button>
-          <button class="button" type="reset">Limpar</button>
-        </div>
+            <div class="w-100">
+              <label class="label" for="uf">UF: </label>
+              <input class="input" type="text" name="uf" id="uf">
+            </div>
+          </div>
 
-      </form>
+          <div class="action-buttons">
+            <button class="button" type="submit">Enviar</button>
+            <button class="button" type="reset">Limpar</button>
+          </div>
+
+        </form>
+      </div>
     </section>
 
+    <hr>
 
     <!-- mapa do google -->
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.2619628235984!2d-46.78319968449172!3d-23.666588071372907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53af46420527%3A0xeb99ed9009f47af6!2sUNASP%20SP!5e0!3m2!1spt-BR!2sbr!4v1647044305392!5m2!1spt-BR!2sbr"
-      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+    <section class="mapa">
+      <div class="container">
+        <div class="mapa-title">Mapa</div>
+        <div class="mapa-text">
+          Nossa localização fica em São Paulo, venha nos conhecer.
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.2619628235984!2d-46.78319968449172!3d-23.666588071372907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53af46420527%3A0xeb99ed9009f47af6!2sUNASP%20SP!5e0!3m2!1spt-BR!2sbr!4v1647044305392!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
 
   </main>
 
